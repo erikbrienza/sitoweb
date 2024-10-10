@@ -1,0 +1,134 @@
+/* Stile generale per il corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #000;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Hero Section */
+.cv-hero {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.cv-hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.cv-hero p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* Esperienze e Istruzione */
+.cv-experience, .cv-education, .cv-skills {
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.experience-item, .education-item {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+span {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Sezione Competenze */
+.cv-skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cv-skills ul li {
+    font-size: 1.2em;
+    padding: 10px 0;
+}
+
+/* Footer */
+.footer {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-social {
+    margin-top: 10px;
+}
+
+.footer-social .social-link {
+    font-size: 2em;
+    color: white;
+    margin: 0 10px;
+}
+
+.footer-social .social-link:hover {
+    color: grey;
+}
+
+/* Media Query per dispositivi più piccoli */
+@media (max-width: 768px) {
+    .cv-hero h1 {
+        font-size: 2.5em;
+    }
+
+    .cv-hero p {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+}
