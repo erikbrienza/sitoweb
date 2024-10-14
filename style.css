@@ -1,134 +1,427 @@
-/* Stile generale per il corpo */
-body {
-    font-family: 'Arial', sans-serif;
+:root {
+    --primary-color: black;
+    --secondary-color: white;
+    --accent-color: grey;
+    --btn-background-color: #000000;
+    --font-family: Arial, Helvetica, sans-serif;
+    --hero-font-size: 4vw;
+}
+
+*{
     margin: 0;
     padding: 0;
-    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Navbar */
-.navbar {
-    background-color: #000;
-    padding: 15px;
-    text-align: center;
-}
-
-.navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-.navbar ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-/* Hero Section */
-.cv-hero {
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px;
     background-color: black;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
+    position: sticky;
+    top: 0;
 }
 
-.cv-hero h1 {
-    font-size: 3em;
+.logoerik {
+    max-height: 50px; 
+}
+
+.nav {
+    list-style: none;
     margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-.cv-hero p {
-    font-size: 1.5em;
-    margin: 10px 0;
+.nav li {
+    margin-left: 20px; 
 }
 
-/* Esperienze e Istruzione */
-.cv-experience, .cv-education, .cv-skills {
-    padding: 60px 20px;
-    background-color: #f4f4f4;
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-.container {
+.nav a:hover {
+    color: grey;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Immagine di sfondo della Hero */
+.imghero {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* Stile per il titolo nella Hero */
+.h1hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white;
+    font-size: 4vw; 
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    padding: 0 20px; 
+}
+
+/* Stile generale per la sezione About Me */
+.about-me {
+    padding: 100px 20px;
+    background-color: #f8f9fa;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+/* Stile per il testo della sezione */
+.about-text {
+    flex: 1;
+    padding-right: 20px;
 }
 
-.experience-item, .education-item {
+.about-text h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #666;
+}
+
+.about-text .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.about-text .btn:hover {
     background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
 }
 
-h3 {
+/* Stile per l'immagine della sezione */
+.about-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-img img {
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Stile generale per la sezione Portfolio */
+.portfolio {
+    padding: 100px 20px;
+    background-color: black;
+    text-align: center;
+}
+
+.portfolio-title {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+/* Stile per il contenitore dei progetti */
+.portfolio-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Stile per i singoli progetti */
+.portfolio-item {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+/* Stile per le immagini dei progetti */
+.portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Overlay con descrizione */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+/* Titolo del progetto */
+.portfolio-overlay h3 {
     font-size: 1.8em;
     margin-bottom: 10px;
 }
 
-span {
-    font-size: 1em;
-    color: #666;
-}
-
-/* Sezione Competenze */
-.cv-skills ul {
-    list-style: none;
-    padding: 0;
-}
-
-.cv-skills ul li {
+/* Descrizione del progetto */
+.portfolio-overlay p {
     font-size: 1.2em;
-    padding: 10px 0;
+    margin-bottom: 20px;
 }
 
-/* Footer */
-.footer {
-    background-color: #000;
+/* Pulsante */
+.portfolio-btn {
+    padding: 12px 25px;
+    background-color: #007bff;
     color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+/* Stile generale della sezione contatti */
+.contact-section {
+    background-color: #1f1f1f; 
+    color: #fff; 
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #bbb; 
+}
+
+/* Stile per il form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #333; 
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #bbb; 
+}
+
+/* Pulsante di invio */
+.submit-btn {
+    background-color: white; 
+    color: black;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Stile generale del footer */
+.footer {
+    background-color: #000; /* Sfondo nero */
+    color: #fff; /* Testo bianco */
     padding: 20px;
     text-align: center;
 }
 
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+/* Stile per i link social */
 .footer-social {
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.footer-social .social-link {
-    font-size: 2em;
-    color: white;
-    margin: 0 10px;
+.social-link {
+    font-size: 1.8em;
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
-.footer-social .social-link:hover {
-    color: grey;
+.social-link:hover {
+    color: gray; /* Hover: cambia colore dei social in blu */
 }
 
-/* Media Query per dispositivi più piccoli */
+/* Media query per schermi piccoli */
 @media (max-width: 768px) {
-    .cv-hero h1 {
-        font-size: 2.5em;
+    .footer p {
+        font-size: 1em;
     }
 
-    .cv-hero p {
+    .social-link {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer p {
+        font-size: 0.9em;
+    }
+
+    .social-link {
         font-size: 1.2em;
     }
+}
 
-    h2 {
+
+/* Media Queries per schermi piccoli */
+@media (max-width: 768px) {
+    .contact-section h2 {
         font-size: 2em;
     }
 
-    h3 {
-        font-size: 1.5em;
+    .contact-section p {
+        font-size: 1em;
+    }
+
+    .submit-btn {
+        width: 100%;
+        font-size: 1.1em;
+    }
+}
+
+
+/* Media Query per dispositivi piccoli */
+@media (max-width: 768px) {
+    .portfolio-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-item {
+        max-width: 90%;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Media query per dispositivi più piccoli */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .about-img img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-text h2 {
+        font-size: 2em;
+    }
+
+    .about-text p {
+        font-size: 1em;
+    }
+
+    .about-text .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Media Queries per dispositivi più piccoli */
+@media (max-width: 768px) {
+    .h1hero {
+        font-size: 6vw; 
+    }
+}
+
+@media (max-width: 480px) {
+    .h1hero {
+        font-size: 8vw; 
     }
 }
